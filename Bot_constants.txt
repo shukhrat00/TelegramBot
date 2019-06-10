@@ -1,1 +1,1 @@
-{"bot_constants": {"token": "833895761:AAHV8i44EZuGKefdvke6QQUP0MhigLHTg8Y", "offset": 567369659}, "bot_commands": [["/help", "Shows this message again"], ["/airports", "Shows the list of availble airports"]]}
+{"bot_constants": {"token": "833895761:AAHV8i44EZuGKefdvke6QQUP0MhigLHTg8Y", "offset": 567369856}, "bot_commands": [["/help", "Shows this message again"], ["/airports", "Shows the list of availble airports"], ["/find", "Finds your flight based on date, airport and destination"]], "greet_patterns": ["hello", "hi", "greetings", "good day", "good afternoon"]}

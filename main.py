@@ -1,8 +1,12 @@
 import requests
 import time
 import json
+import datetime
 from Bot_body import telegramBot
-from Date_generator import sheduleChunk
         
 bot = telegramBot()
-chunk = sheduleChunk()
+bot.chunk.fill_date(datetime.datetime.today())
+
+while 1:
+    bot.update()
+    time.sleep(1)
