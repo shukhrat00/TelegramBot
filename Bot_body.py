@@ -95,10 +95,16 @@ class telegramBot():
                 for flight in self.chunk.schedules[date][self.client_states[mess['message']['chat']['id']][2]][self.client_states[mess['message']['chat']['id']][1]][gate]:
                     country = self.chunk.schedules[date][self.client_states[mess['message']['chat']['id']][2]][self.client_states[mess['message']['chat']['id']][1]][gate][flight][0]
                     print(flight, country)
-                    text = text + "\nAt " + str(flight) + " there is a flight " + ["from", "to"][self.client_states[mess['message']['chat']['id']][1]] + " " + country
+                    text = text + "\nAt " + self.minutes_to_solid(flight) + " there is a flight " + ["from", "to"][self.client_states[mess['message']['chat']['id']][1]] + " " + country
             print(text)
         self.send_mess(mess['message']['chat']['id'], text)    
         self.client_states[mess['message']['chat']['id']] = [0, 0, ""]
+    
+    def minutes_to_solid(self, minut):
+        hours = minut // 60
+        minuts = minut % 60
+        minuts = '0' * (2 - len(str(minuts))) + str(minuts)
+        return str(hours) + ":" + str(minuts)
     
     def update(self):
         messages = [i for i in self.get_updates_json()['result']]
